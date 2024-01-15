@@ -5,7 +5,7 @@ import NavBar from "./NavBar";
 
 const Header = ({ onMenuButtonClick }) => {
   return (
-    <header className="flex items-center px-6 pb-6 pt-[1.1875rem] xl:mx-auto xl:h-28 xl:w-[70rem] xl:border-b xl:border-grayish-blue xl:px-0 xl:pb-0 xl:pt-0">
+    <header className="xl:border-very-light-gray flex items-center px-6 pb-6 pt-[1.1875rem] xl:mx-auto xl:h-28 xl:w-[70rem] xl:border-b xl:px-0 xl:pb-0 xl:pt-0">
       <img
         src={menuIcon}
         alt="Menu icon"

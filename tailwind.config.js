@@ -10,6 +10,7 @@ export default {
         "dark-grayish-blue": "hsl(219, 9%, 45%)",
         "grayish-blue": "hsl(220, 14%, 75%)",
         "light-grayish-blue": "hsl(223, 64%, 98%)",
+        "very-light-gray": "hsl(0, 0, 59, 100%)",
         white: "hsl(0, 0%, 100%)",
         black: "hsl(220, 14%, 13%)",
         "perfect-black": "hsl(0, 0%, 0%)",
