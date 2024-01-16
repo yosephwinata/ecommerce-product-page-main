@@ -1,6 +1,6 @@
 import useWindowSize from "../hooks/useWindowSize";
 import ImageCarouselMobile from "../components/touch/ImageCarouselMobile";
-import ImageGalleryDesktop from "../components/desktop/ImageCarouselDesktop";
+import ImageGalleryDesktop from "../components/desktop/ImageGalleryDesktop";
 
 const Product = () => {
   const productImages = [
@@ -11,7 +11,15 @@ const Product = () => {
   ];
   const { isDesktop } = useWindowSize();
 
-  return <ImageCarouselMobile images={productImages} />;
+  return (
+    <>
+      {isDesktop ? (
+        <ImageGalleryDesktop images={productImages} />
+      ) : (
+        <ImageCarouselMobile images={productImages} />
+      )}
+    </>
+  );
 };
 
 export default Product;
