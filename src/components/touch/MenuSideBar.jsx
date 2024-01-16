@@ -1,5 +1,5 @@
-import closeIcon from "../assets/images/icon-close.svg";
-import NavBar from "./NavBar";
+import closeIcon from "../../assets/images/icon-close.svg";
+import NavBar from "../common/NavBar";
 
 const MenuSideBar = ({ isOpen, onCloseIconClick }) => {
   if (!isOpen) return null;
