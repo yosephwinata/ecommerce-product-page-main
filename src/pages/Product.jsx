@@ -1,6 +1,7 @@
 import useWindowSize from "../hooks/useWindowSize";
 import ImageCarouselMobile from "../components/touch/ImageCarouselMobile";
 import ImageGalleryDesktop from "../components/desktop/ImageGalleryDesktop";
+import ProductContent from "../components/common/ProductContent";
 
 const Product = () => {
   const productImages = [
@@ -18,6 +19,7 @@ const Product = () => {
       ) : (
         <ImageCarouselMobile images={productImages} />
       )}
+      <ProductContent />
     </>
   );
 };
