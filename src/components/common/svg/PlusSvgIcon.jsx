@@ -5,6 +5,7 @@ const PlusSvgIcon = () => {
       height="12"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
+      className="cursor-pointer hover:opacity-80"
     >
       <defs>
         <path

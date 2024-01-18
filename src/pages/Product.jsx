@@ -13,14 +13,14 @@ const Product = () => {
   const { isDesktop } = useWindowSize();
 
   return (
-    <>
+    <div className="xl:mx-auto xl:mt-[5.625rem] xl:flex xl:w-[63.4375rem] xl:justify-between">
       {isDesktop ? (
         <ImageGalleryDesktop images={productImages} />
       ) : (
         <ImageCarouselMobile images={productImages} />
       )}
       <ProductContent />
-    </>
+    </div>
   );
 };
 
