@@ -2,7 +2,7 @@ import TrashSvgIcon from "/src/components/common/svg/TrashSvgIcon.jsx";
 
 const CartPopover = () => {
   return (
-    <div className="absolute -bottom-2 left-1/2 z-50 w-[96%] -translate-x-1/2 translate-y-full overflow-hidden rounded-[10px] bg-white xl:bottom-0 xl:left-auto xl:right-0 xl:w-[22.5rem] xl:translate-x-16 xl:translate-y-[90%]">
+    <div className="absolute -bottom-2 left-1/2 z-50 w-[96%] -translate-x-1/2 translate-y-full overflow-hidden rounded-[10px] bg-white shadow-2xl xl:bottom-0 xl:left-auto xl:right-0 xl:w-[22.5rem] xl:translate-x-16 xl:translate-y-[90%]">
       <p className="border-b border-very-light-gray px-6 pb-[1.6875rem] pt-6 text-[1rem] font-bold">
         Cart
       </p>
