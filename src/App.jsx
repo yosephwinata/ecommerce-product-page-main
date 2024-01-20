@@ -2,7 +2,6 @@ import { useState } from "react";
 import "./App.css";
 import Header from "./components/common/Header";
 import MenuSideBar from "./components/touch/MenuSideBar";
-import Overlay from "./components/common/Overlay";
 import Product from "./pages/Product";
 
 function App() {
@@ -15,8 +14,8 @@ function App() {
   return (
     <>
       <Header onMenuButtonClick={toggleSidebar} />
-      <MenuSideBar isOpen={isSidebarOpen} onCloseIconClick={toggleSidebar} />
-      <Overlay isOpen={isSidebarOpen} onOverlayClick={toggleSidebar} />
+      <MenuSideBar isOpen={isSidebarOpen} onClose={toggleSidebar} />
+      {/* <Overlay isOpen={isSidebarOpen} onOverlayClick={toggleSidebar} /> */}
       <Product />
     </>
   );
