@@ -1,8 +1,27 @@
+import { useDispatch } from "react-redux";
 import WhiteCartSvgIcon from "./svg/WhiteCartSvgIcon";
 import PrimaryButton from "./buttons/PrimaryButton";
 import AmountSelector from "./AmountSelector";
+import { addItem } from "../../features/cart/cartSlice";
+import { useState } from "react";
 
-const ProductContent = () => {
+const ProductContent = ({ product }) => {
+  const dispatch = useDispatch();
+  const [quantity, setQuantity] = useState(1);
+
+  const handleMinusClick = () => {
+    if (quantity === 0) return;
+    setQuantity((prevQuantity) => prevQuantity - 1);
+  };
+
+  const handlePlusClick = () => {
+    setQuantity((prevQuantity) => prevQuantity + 1);
+  };
+
+  const handleAddToCart = () => {
+    dispatch(addItem({ product, quantity }));
+  };
+
   return (
     <div className="p-6 xl:mt-[3.875rem] xl:w-[27.8125rem] xl:p-0">
       <p className="mb-[1.1875rem] text-xs font-bold uppercase tracking-[1.85px] text-orange xl:mb-[1.6875rem] xl:text-[0.8125rem] xl:tracking-[2px]">
@@ -28,8 +47,16 @@ const ProductContent = () => {
         </p>
       </div>
       <div className="xl:flex xl:gap-4">
-        <AmountSelector className="mb-4 h-14 w-full xl:mb-0 xl:basis-[9.8125rem]" />
-        <PrimaryButton className="h-14 w-full xl:w-auto xl:flex-grow">
+        <AmountSelector
+          className="mb-4 h-14 w-full xl:mb-0 xl:basis-[9.8125rem]"
+          quantity={quantity}
+          onMinusClick={handleMinusClick}
+          onPlusClick={handlePlusClick}
+        />
+        <PrimaryButton
+          className="h-14 w-full xl:w-auto xl:flex-grow"
+          onClick={handleAddToCart}
+        >
           <WhiteCartSvgIcon />
           <span>Add to cart</span>
         </PrimaryButton>

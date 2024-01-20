@@ -1,4 +1,4 @@
-const PlusSvgIcon = () => {
+const PlusSvgIcon = ({ onClick }) => {
   return (
     <svg
       width="12"
@@ -6,6 +6,7 @@ const PlusSvgIcon = () => {
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
       className="cursor-pointer hover:opacity-80"
+      onClick={onClick}
     >
       <defs>
         <path

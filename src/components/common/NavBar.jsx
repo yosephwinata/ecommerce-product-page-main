@@ -10,10 +10,10 @@ const NavBar = () => {
   return (
     <nav className="xl:h-full">
       <ul className="flex flex-col gap-5 xl:ml-[3.5rem] xl:h-full xl:flex-row xl:gap-8">
-        {navItems.map((item, index) => (
+        {navItems.map((item) => (
           <li
-            key={index}
-            className="xl:border-transparent xl:flex xl:items-center xl:border-b-4 xl:hover:border-orange"
+            key={item.name}
+            className="xl:flex xl:items-center xl:border-b-4 xl:border-transparent xl:hover:border-orange"
           >
             <a
               href={item.href}
