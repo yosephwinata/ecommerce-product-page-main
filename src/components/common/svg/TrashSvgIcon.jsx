@@ -1,10 +1,12 @@
-const TrashSvgIcon = () => {
+const TrashSvgIcon = ({ onClick }) => {
   return (
     <svg
       width="14"
       height="16"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
+      onClick={onClick}
+      className="cursor-pointer"
     >
       <defs>
         <path

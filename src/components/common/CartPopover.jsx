@@ -1,5 +1,7 @@
+import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import TrashSvgIcon from "/src/components/common/svg/TrashSvgIcon.jsx";
+import { removeItem } from "../../features/cart/cartSlice";
 
 const CartPopover = () => {
   const cartItems = useSelector((state) => state.cart.items);
@@ -27,12 +29,18 @@ const CartPopover = () => {
 };
 
 const CartItem = ({ product }) => {
+  const dispatch = useDispatch();
+
   // format number to US dollar
   let USDollar = new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
   });
   const totalPrice = product.finalPrice * product.quantity;
+
+  const handleRemoveFromCart = () => {
+    dispatch(removeItem(product.id));
+  };
 
   return (
     <div className="flex items-center">
@@ -57,7 +65,7 @@ const CartItem = ({ product }) => {
         </div>
       </div>
       <div className="ml-auto">
-        <TrashSvgIcon />
+        <TrashSvgIcon onClick={handleRemoveFromCart} />
       </div>
     </div>
   );
