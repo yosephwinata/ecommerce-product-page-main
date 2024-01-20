@@ -15,7 +15,6 @@ function App() {
     <>
       <Header onMenuButtonClick={toggleSidebar} />
       <MenuSideBar isOpen={isSidebarOpen} onClose={toggleSidebar} />
-      {/* <Overlay isOpen={isSidebarOpen} onOverlayClick={toggleSidebar} /> */}
       <Product />
     </>
   );

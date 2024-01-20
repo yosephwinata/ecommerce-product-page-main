@@ -52,7 +52,7 @@ const Header = ({ onMenuButtonClick }) => {
         className="ml-5 w-6 cursor-pointer rounded-full border-2 border-transparent hover:border-orange xl:ml-[2.875rem] xl:w-[3.125rem]"
       />
 
-      <CartPopover showCartPopover={showCartPopover} />
+      <CartPopover isOpen={showCartPopover} onClose={toggleCartPopover} />
     </header>
   );
 };

@@ -1,32 +1,36 @@
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import TrashSvgIcon from "/src/components/common/svg/TrashSvgIcon.jsx";
+import Overlay from "/src/components/common/Overlay";
 import { removeItem } from "../../features/cart/cartSlice";
 
-const CartPopover = ({ showCartPopover }) => {
+const CartPopover = ({ isOpen, onClose }) => {
   const cartItems = useSelector((state) => state.cart.items);
 
   return (
-    <div
-      className={`absolute -bottom-2 left-1/2 z-50 w-[96%] -translate-x-1/2 translate-y-full overflow-hidden rounded-[10px] bg-white shadow-2xl xl:bottom-0 xl:left-auto xl:right-0 xl:w-[22.5rem] xl:translate-x-16 xl:translate-y-[90%] ${!showCartPopover && "hidden"}`}
-    >
-      <p className="border-b border-very-light-gray px-6 pb-[1.6875rem] pt-6 text-[1rem] font-bold">
-        Cart
-      </p>
-      <div className="justify-between px-6 pb-8 pt-6">
-        <div className="flex flex-col gap-3">
-          {cartItems.map((item) => (
-            <CartItem key={item.id} product={item} />
-          ))}
+    <>
+      <Overlay isOpen={isOpen} onOverlayClick={onClose} isTransparent={true} />
+      <div
+        className={`absolute -bottom-2 left-1/2 z-50 w-[96%] -translate-x-1/2 translate-y-full overflow-hidden rounded-[10px] bg-white shadow-2xl xl:bottom-0 xl:left-auto xl:right-0 xl:w-[22.5rem] xl:translate-x-16 xl:translate-y-[90%] ${!isOpen && "hidden"}`}
+      >
+        <p className="border-b border-very-light-gray px-6 pb-[1.6875rem] pt-6 text-[1rem] font-bold">
+          Cart
+        </p>
+        <div className="justify-between px-6 pb-8 pt-6">
+          <div className="flex flex-col gap-3">
+            {cartItems.map((item) => (
+              <CartItem key={item.id} product={item} />
+            ))}
+          </div>
+          <a
+            href="#"
+            className="mt-6 block rounded-[10px] bg-orange py-5 text-center text-[1rem] font-bold text-white"
+          >
+            Checkout
+          </a>
         </div>
-        <a
-          href="#"
-          className="mt-6 block rounded-[10px] bg-orange py-5 text-center text-[1rem] font-bold text-white"
-        >
-          Checkout
-        </a>
       </div>
-    </div>
+    </>
   );
 };
 
