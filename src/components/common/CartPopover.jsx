@@ -3,11 +3,13 @@ import { useSelector } from "react-redux";
 import TrashSvgIcon from "/src/components/common/svg/TrashSvgIcon.jsx";
 import { removeItem } from "../../features/cart/cartSlice";
 
-const CartPopover = () => {
+const CartPopover = ({ showCartPopover }) => {
   const cartItems = useSelector((state) => state.cart.items);
 
   return (
-    <div className="absolute -bottom-2 left-1/2 z-50 w-[96%] -translate-x-1/2 translate-y-full overflow-hidden rounded-[10px] bg-white shadow-2xl xl:bottom-0 xl:left-auto xl:right-0 xl:w-[22.5rem] xl:translate-x-16 xl:translate-y-[90%]">
+    <div
+      className={`absolute -bottom-2 left-1/2 z-50 w-[96%] -translate-x-1/2 translate-y-full overflow-hidden rounded-[10px] bg-white shadow-2xl xl:bottom-0 xl:left-auto xl:right-0 xl:w-[22.5rem] xl:translate-x-16 xl:translate-y-[90%] ${!showCartPopover && "hidden"}`}
+    >
       <p className="border-b border-very-light-gray px-6 pb-[1.6875rem] pt-6 text-[1rem] font-bold">
         Cart
       </p>
