@@ -5,6 +5,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import PrevSvgIcon from "../common/svg/PrevSvgIcon";
 import NextSvgIcon from "../common/svg/NextSvgIcon";
+import { getProductImageByIndex } from "/src/utils/imageUtils";
 
 const ImageCarouselMobile = ({ images }) => {
   const [swiper, setSwiper] = useState(null);
@@ -33,7 +34,11 @@ const ImageCarouselMobile = ({ images }) => {
       >
         {images.map((image, index) => (
           <SwiperSlide key={index} className="flex items-center justify-center">
-            <img src={image} alt={`Product ${index}`} className="w-full" />
+            <img
+              src={getProductImageByIndex(currentIndex)}
+              alt={`Product ${index}`}
+              className="w-full"
+            />
           </SwiperSlide>
         ))}
       </Swiper>

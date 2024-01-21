@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { getProductImageByIndex } from "/src/utils/imageUtils";
+import { getProductThumbnailByIndex } from "/src/utils/imageUtils";
 
 const ImageGalleryDesktop = ({ images }) => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
@@ -11,7 +12,6 @@ const ImageGalleryDesktop = ({ images }) => {
   return (
     <div className="w-[27.8175rem]">
       <img
-        // src={`/src/assets/images/image-product-${selectedImageIndex + 1}.jpg`}
         src={getProductImageByIndex(selectedImageIndex)}
         alt="Selected product image"
         className="mb-8 w-full cursor-pointer rounded-[15px]"
@@ -24,7 +24,7 @@ const ImageGalleryDesktop = ({ images }) => {
             className={`relative w-[5.5rem] cursor-pointer overflow-hidden rounded-[10px] ${index === selectedImageIndex && "border-2 border-orange"}`}
           >
             <img
-              src={`/src/assets/images/image-product-${index + 1}-thumbnail.jpg`}
+              src={getProductThumbnailByIndex(index)}
               alt={`Product thumbnail ${index + 1}`}
               className="z-10 w-full"
             />
