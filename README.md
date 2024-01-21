@@ -1,8 +1,17 @@
-# React + Vite
+# Frontend Mentor - E-commerce product page solution
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a solution to the [E-commerce product page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/ecommerce-product-page-UPsZ9MJp6). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-Currently, two official plugins are available:
+### Links
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Solution URL: [https://github.com/yosephwinata/ecommerce-product-page-main](https://github.com/yosephwinata/ecommerce-product-page-main)
+- Live Site URL: [https://ecommerce-product-page-main-snowy.vercel.app/](https://ecommerce-product-page-main-snowy.vercel.app/)
+
+## My process
+
+### Built with
+
+- Tailwind CSS
+- React
+- Redux Toolkit
+- Mobile-first workflow
