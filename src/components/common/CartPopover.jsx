@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import TrashSvgIcon from "/src/components/common/svg/TrashSvgIcon.jsx";
 import Overlay from "/src/components/common/Overlay";
 import { removeItem } from "../../features/cart/cartSlice";
+import productThumbnail from "/src/assets/images/image-product-1-thumbnail.jpg";
 
 const CartPopover = ({ isOpen, onClose }) => {
   const cartItems = useSelector((state) => state.cart.items);
@@ -61,7 +62,7 @@ const CartItem = ({ product }) => {
   return (
     <div className="flex items-center">
       <img
-        src="/src/assets/images/image-product-1-thumbnail.jpg"
+        src={productThumbnail}
         alt="Product thumbnail"
         className="w-[3.125rem] rounded"
       />
