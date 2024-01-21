@@ -3,7 +3,7 @@ const Overlay = ({ isOpen, onOverlayClick, isTransparent }) => {
 
   return (
     <div
-      className={`fixed left-0 top-0 z-40 h-full w-full bg-perfect-black opacity-80 ${isTransparent && "bg-transparent"}`}
+      className={`fixed left-0 top-0 z-30 h-full w-full bg-perfect-black opacity-80 ${isTransparent && "bg-transparent"}`}
       onClick={onOverlayClick}
     ></div>
   );

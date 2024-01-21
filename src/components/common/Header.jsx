@@ -7,8 +7,19 @@ import NavBar from "./NavBar";
 import CartPopover from "./CartPopover";
 
 const Header = ({ onMenuButtonClick }) => {
-  const cartItemsCount = useSelector((state) => state.cart.items.length);
   const [showCartPopover, setShowCartPopover] = useState(false);
+  const items = useSelector((state) => state.cart.items);
+
+  const countCartItems = () => {
+    const initialValue = 0;
+    const itemsCount = items.reduce(
+      (accumulator, currentValue) => accumulator + currentValue.quantity,
+      initialValue,
+    );
+    return itemsCount;
+  };
+
+  const cartItemsCount = countCartItems();
 
   const toggleCartPopover = () => {
     setShowCartPopover((prevState) => !prevState);
@@ -26,7 +37,7 @@ const Header = ({ onMenuButtonClick }) => {
       <div className="hidden xl:flex xl:h-full xl:items-center">
         <NavBar />
       </div>
-      <div className="relative ml-auto" onClick={toggleCartPopover}>
+      <div className="relative z-40 ml-auto" onClick={toggleCartPopover}>
         <svg
           width="22"
           height="20"
