@@ -6,17 +6,20 @@ import { removeItem } from "../../features/cart/cartSlice";
 
 const CartPopover = ({ isOpen, onClose }) => {
   const cartItems = useSelector((state) => state.cart.items);
+  const isCartEmpty = cartItems.length === 0;
 
   return (
     <>
       <Overlay isOpen={isOpen} onOverlayClick={onClose} isTransparent={true} />
       <div
-        className={`absolute -bottom-2 left-1/2 z-50 w-[96%] -translate-x-1/2 translate-y-full overflow-hidden rounded-[10px] bg-white shadow-2xl xl:bottom-0 xl:left-auto xl:right-0 xl:w-[22.5rem] xl:translate-x-16 xl:translate-y-[90%] ${!isOpen && "hidden"}`}
+        className={`absolute -bottom-2 left-1/2 z-50 flex w-[96%] -translate-x-1/2 translate-y-full flex-col overflow-hidden rounded-[10px] bg-white shadow-2xl xl:bottom-0 xl:left-auto xl:right-0 xl:w-[22.5rem] xl:translate-x-16 xl:translate-y-[90%] ${!isOpen && "hidden"} ${isCartEmpty && "h-64"}`}
       >
         <p className="border-b border-very-light-gray px-6 pb-[1.6875rem] pt-6 text-[1rem] font-bold">
           Cart
         </p>
-        <div className="justify-between px-6 pb-8 pt-6">
+        <div
+          className={`justify-between px-6 pb-8 pt-6 ${isCartEmpty && "hidden"}`}
+        >
           <div className="flex flex-col gap-3">
             {cartItems.map((item) => (
               <CartItem key={item.id} product={item} />
@@ -28,6 +31,13 @@ const CartPopover = ({ isOpen, onClose }) => {
           >
             Checkout
           </a>
+        </div>
+        <div
+          className={`flex h-auto flex-grow items-center justify-center ${!isCartEmpty && "hidden"}`}
+        >
+          <p className={`text-base font-bold text-dark-grayish-blue`}>
+            Your cart is empty.
+          </p>
         </div>
       </div>
     </>
